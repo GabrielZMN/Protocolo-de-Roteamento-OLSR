@@ -122,7 +122,7 @@
   <section class="u-clearfix u-section-3" id="sec-7642">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h3 class="u-text u-text-default u-text-1">Redes Ad Hoc</h3>
-	<h4 class="u-text u-text-default u-text-1">Definição de Redes Ad Hoc</h4>
+	<h4 class="u-text u-text-default u-text-1">Definição</h4>
       	  <p class="u-text u-text-default u-text-2">
           	O conceito de redes ad hoc veio o uma entidade de pesquisa dos Estados Unidos começou a estudar como poderia ser a comunicação de rádio em um ambiente militar, 
 		onde o principal foco é facilidade de conexão e mobilidade que os dispositivos que se conectam a rede precisam ter.<br>
@@ -134,13 +134,26 @@
 		da rede é apenas um salto. Mas existe outro tipo de rede Ad Hoc, o MANET (Multihop Ad Hoc Network), onde que ele constrói uma malha, que se o nó destino encontra-se
 		na vizinhança do nó fonte, este se utiliza do single hop, caso não, a informação chegará ao destino por meio de nós intermediários.
       	  </p>
-	<h4 class="u-text u-text-default u-text-1">TEXTO</h4>
+	<img src="img_manet.jpg" width="404" alt="Figura 2: Exemplo de um MANET" title="Figura 2: Exemplo de um MANET">
+	<h4 class="u-text u-text-default u-text-1">Tipos de Protocolos de Roteamento</h4>
       	  <p class="u-text u-text-default u-text-2">
-          	TEXTO
+          	Dentro das Redes Ad Hoc podemos encontrar diversos protocolos de roteamento que vieram para tentar prover o melhor nível de qualidade de serviço possível, 
+		visto que os protocolos de roteamentos desenvolvidos para redes cabeadas era bem ineficiente quando íamos para o ambiente wireless. Com isso os protocolos 
+		para esse tipo de rede foram divididos em categorias. <br>
+		- <strong>Pró-ativos:</strong> São enviadas informações e atualizações sobre cada par de nós da rede em intervalos fixos para manter as tabelas de roteamento atualizadas.<br>
+		- <strong>Reativos:</strong> Estes protocolos estabelecem uma rota ao destino apenas quando há pacotes a serem enviados.<br>
+		- <strong>Hibridos:</strong> Combinam características de pró-ativos e reativos para utilizar das vantagens de ambos.<br>
+		- <strong>Location-Aware:</strong> Se utiliza da posição física dos nós para estabelecer uma rota.<br>
+		- <strong>Energy-Aware:</strong> Leva em consideração a energia contida em cada nó para fazer o roteamento. Ele é um bom protocolo para minimizar energia consumida no envio de um pacote,
+		e maximiza o tempo de vida da rede. <br>
+		Essa área de pesquisa continua a buscar o melhor protocolo no sentido de criar uma rede mais robusta e eficiente. Os mais atuantes são o AODV, DSR, OLSR e TBRP. 
+		No nosso trabalho iremos dar um enfoque no OLSR que é um protocolo pró-ativo.
       	  </p>
-	<h4 class="u-text u-text-default u-text-1">TEXTO</h4>
+	<h4 class="u-text u-text-default u-text-1">Desafios</h4>
       	  <p class="u-text u-text-default u-text-2">
-          	TEXTO
+          	Porém mesmo com a mobilidade, a fata de uma infra-estrutura bem definida adiciona novas características, complexidades e designs específicos para esse tipo de rede que ainda não estão bem consolidados.<br>
+		Mesmo com a criação do MANET WG(Working Group), em 1997, esta tecnologia ainda não atingiu de forma efetiva o mercado, fazendo que ela fique limitada a soluções muito específicas, 
+		como campos de batalha e recuperação de desastres.
 	  </p>
     </div>
   </section>
