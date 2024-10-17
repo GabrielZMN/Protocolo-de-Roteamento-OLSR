@@ -172,12 +172,55 @@
   </section>
   <section class="u-clearfix u-section-6" id="sec-b9c5">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <h3 class="u-text u-text-default u-text-1">Segurança</h3>
+      <h3 class="u-text u-text-default u-text-1">Segurança no OLSR</h3>
       <p class="u-text u-text-default u-text-2">
-	OLSR permite, de acordo com suas especificações, que qualquer nó faça parte da rede, assumindo que 
-	todos os nós são comportados e bem vindos. Se esta suposição é falha, a integridade da rede é posta em risco [12].
-	.
+        
       </p>
+      <h4 class="u-text u-text-default u-text-1">Vulnerabilidades e Ataques Comuns no OSLR</h4>
+      <p class="u-text u-text-default u-text-2">
+        OLSR permite, de acordo com suas especificações, que qualquer 
+        nó faça parte da rede, assumindo que todos os nós são 
+        comportados e bem vindos. Se esta suposição é falha, a 
+        integridade da rede é posta em risco [12].<br><br>
+        <strong>Geração incorreta de tráfego de controle:</strong><br><br>
+        Um nó X envia mensagens HELLO com endereço de origem de outro 
+        nó (A). MPRs vizinhos aó nó X vão anunciar que eles fornecem 
+        o último salto para o nó A. Isso gera rotas conflituosas que 
+        podem formar loops. Além disso, um nó também pode enviar uma 
+        mensagem HELLO sinalizando vizinhos incorretamente se estes 
+        estiverem sem conectividade com a rede. Como consequência, 
+        esses nós "invísiveis" pra rede podem não ser alcançáveis.<br><br>
+        <strong>Retransmissão incorreta de tráfego de controle</strong><br><br>
+        Se mensagens TC não são corretamente retransmitidas, e a 
+        topologia da rede não é redundante, a perda de conectividade 
+        pode ocorrer. <br><br>
+
+      </p>
+      <h4 class="u-text u-text-default u-text-1">Extensões de Segurança para OLSR</h4>
+      
+      <p class="u-text u-text-default u-text-2">
+        Para previnir códigos maliciosos de injetarem informações 
+        incorretas na rede, uma assinatura é enviada junto com cada
+        mensagem de controle gerada por um nó. Cada assinatura é 
+        acossiada a um momento, de maneira que possa ser verificada 
+        a integraidade da mensagem e se esta é recente. <br><br>
+      </p>
+      <img src="images/SignatureFrame.png" alt="Figura 3 - Assinatura OLSR" title="Figura 3 - Assinatura OLSR">
+      <p>
+        <strong>Assinaturas</strong><br><br>
+        Assinaturas são uma maneira do nó receptor verificar a 
+        autenticidade da mensagem OLSR. O método mais seguro de 
+        autenticação é feito atribuindo chaves individuais
+        assimétricas para cada nó não comprometido, mas métodos menos  
+        intensos computacionalmente com chaves secretas 
+        compartilhadas por todos os nós também são usados. <br><br>
+
+      </p>
+      <h4 class="u-text u-text-default u-text-1">Autenticação de Mensagens e Proteção de Topologia</h4>
+      <p>
+
+      </p>
+      <h4 class="u-text u-text-default u-text-1">Implementação de Segurança no OLSRv2</h4>
     </div>
   </section>
   <section class="u-clearfix u-section-7" id="sec-b205">
