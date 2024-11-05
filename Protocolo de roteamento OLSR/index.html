@@ -245,32 +245,32 @@
 	      <strong>(1) Consumo de largura de banda e processamento:</strong> O OLSR é um protocolo proativo, o que significa que ele mantém rotas
 	      atualizadas o tempo todo, independentemente de serem necessárias. Isso envolve um tráfego constante de mensagens de
 	      controle, que pode sobrecarregar a rede em cenários de grande escala ou com muitos nós móveis. Esse consumo contínuo de recursos limita
-	      o uso do OLSR em redes onde largura de banda e energia são restritas, como redes IoT de dispositivos com baterias pequenas ou limitadas.
+	      o uso do OLSR em redes onde largura de banda e energia são restritas, como redes IoT de dispositivos com baterias pequenas ou limitadas.<br><br>
 	      
 	      <strong>(2) Escalabilidade:</strong> Em redes grandes e densas, a sobrecarga de controle aumenta com o número de nós, pois o OLSR precisa
 	      manter informações de roteamento para todos os nós na rede. Isso reduz a eficiência à medida que a rede cresce, dificultando a escalabilidade.
 	      Essa limitação torna o OLSR menos ideal para redes extensas, como cidades inteligentes ou fazendas de grande porte, onde o número de dispositivos
-	      pode variar significativamente e se expandir constantemente.
+	      pode variar significativamente e se expandir constantemente.<br><br>
 
 	      <strong>(3) Latência e Overhead em redes móveis:</strong> Embora o OLSR atualize rotas periodicamente, ele não reage imediatamente a mudanças na
 	      topologia de rede. Isso pode levar a rotas desatualizadas momentaneamente, aumentando a latência até que as novas rotas sejam propagadas. Em redes
 	      altamente dinâmicas, como drones ou veículos em movimento, isso pode resultar em perda de pacotes ou interrupções na comunicação, especialmente se
-	      a rede estiver constantemente mudando de configuração.
+	      a rede estiver constantemente mudando de configuração.<br><br>
 
 	      <strong>(4) Eficiência energética:</strong> Como o OLSR exige a troca regular de mensagens de controle, ele consome mais energia em comparação a
 	      protocolos reativos, que só calculam rotas quando necessário. Para dispositivos movidos a bateria, isso é uma preocupação significativa. Em dispositivos
 	      IoT com restrições de energia, como sensores alimentados por baterias ou painéis solares, o uso constante do OLSR pode reduzir a vida útil da rede e exigir
-	      manutenções frequentes.
+	      manutenções frequentes.<br><br>
 
 	      <strong>(5) Segurança e vulnerabilidade:</strong> O OLSR foi desenvolvido principalmente para redes confiáveis e pode ser vulnerável a ataques, como injeção
 	      de falsas informações de roteamento, que podem causar congestionamento ou falhas na rede. A falta de autenticação e criptografia nativa é um ponto fraco do protocolo.
 	      Para redes IoT que lidam com dados sensíveis ou que operam em ambientes críticos (como monitoramento de saúde ou infraestruturas de energia), essas vulnerabilidades
-	      representam um risco e podem exigir protocolos de segurança adicionais, aumentando a complexidade.
+	      representam um risco e podem exigir protocolos de segurança adicionais, aumentando a complexidade.<br><br>
 
 	      <strong>(6) Prioridade e Qualidade de Serviço (QoS):</strong> O OLSR não possui mecanismos nativos de QoS para priorizar diferentes tipos de tráfego. Isso significa que,
 	      em uma rede onde certos dados são mais críticos (como alertas de emergência), o OLSR trata todos os pacotes de dados de maneira equivalente. Em uma rede IoT, onde alguns
 	      dados (como alarmes) podem ser mais importantes que dados de monitoramento regular, a falta de QoS pode dificultar a eficiência do OLSR em cenários que exigem resposta rápida
-	      e priorização.
+	      e priorização.<br><br>
       </p>
     </div>
   </section>
@@ -278,7 +278,7 @@
     <div class="u-clearfix u-sheet u-sheet-1">
       <h3 class="u-text u-text-default u-text-1">Conclusão</h3>
       <p class="u-text u-text-default u-text-2">
-	      Em conclusão, o protocolo OLSR é uma solução robusta para redes ad hoc, destacando-se pela eficiência em cenários onde uma
+	      Concluindo, o protocolo OLSR é uma solução robusta para redes ad hoc, destacando-se pela eficiência em cenários onde uma
 	      comunicação proativa e rápida entre nós móveis é essencial. Suas aplicações vão desde operações de emergência e redes comunitárias
 	      até IoT agrícola e redes de veículos, proporcionando conectividade em áreas sem infraestrutura fixa. No entanto, o OLSR enfrenta
 	      desafios significativos, especialmente em termos de escalabilidade, consumo de energia, segurança e capacidade de adaptação em redes
