@@ -173,8 +173,8 @@
 		  diferentes tipos de informações em uma única transmissão sem perder a retro-compatibilidade. Os pacotes são encapsulados em datagramas UDP para transmissão, 
 		  inclusive a porta 698 foi atribuída pela IANA para o uso exclusivo do protocolo OLSR. O protocolo também utiliza a técnica de flooding para disseminar mensagens pela rede, 
 		  com otimização usando MPRs para minimizar duplicações. O cabeçalho das mensagens contém informações sobre a distância em saltos até o emissor da mensagem.
-	    <img src="images/OLSR_Package.png" width="404" alt="Figura 3.1: Pacote OLSR" title="Figura 3.1: Pacote OLSR">
       	  </p>
+	    <img src="images/OLSR_Package.png" width="404" alt="Figura 3.1: Pacote OLSR" title="Figura 3.1: Pacote OLSR">
 	<h4 class="u-text u-text-default u-text-1">Detecção de Conexões</h4>
       	  <p class="u-text u-text-default u-text-2">
           	A detecção de conexão no OLSR ocorre por meio da emissão periódica de mensagens HELLO. Cada interface envia essas mensagens para verificar a conectividade com interfaces de nós vizinhos. 
@@ -186,7 +186,8 @@
           	Já a detecção de vizinhos no OLSR é feita de forma diferente dependendo do tipo de nó:<br><br>
 		- <strong>Nó de interface única:</strong> O endereço principal do nó é simplesmente o único endereço da interface, o que permite deduzir os vizinhos diretamente a 
 		  partir da troca de mensagens de <strong>Link Sensing(detecção de conexão)</strong>.<br><br>
-		- <strong>Informações adicionais são necessárias para mapear endereços de interfaces para endereços principais dos nós. Isso é obtido por meio de mensagens <strong>MID (Multiple Interface Declaration)</strong>.<br><br>
+		- <strong>Nó de múltiplas interfaces:</strong> Informações adicionais são necessárias para mapear endereços de interfaces para endereços principais dos nós. 
+		  Isso é obtido por meio de mensagens <strong>MID (Multiple Interface Declaration)</strong>.<br><br>
       	  </p>
 
 	<h4 class="u-text u-text-default u-text-1">HELLO Message</h4>
@@ -194,32 +195,32 @@
 		Essas mensagens são essenciais para a detecção de links, vizinhos e a seleção de MPRs. A estrutura da mensagem é projetada de forma flexível, permitindo a inclusão de novos recursos no futuro, 
 		  sem comprometer a compatibilidade com versões anteriores. As HELLO messages são usadas para coletar informações sobre links locais e vizinhos, fundamental para a criação de tabelas de 
 		  roteamento e para o funcionamento eficiente do protocolo.
-	    <img src="images/Hello_Package.png" width="404" alt="Figura 3.2: Estrutura do HELLO Message" title="Figura 3.2: Estrutura do HELLO Message">
       	  </p>
+	    <img src="images/Hello_Package.png" width="404" alt="Figura 3.2: Estrutura do HELLO Message" title="Figura 3.2: Estrutura do HELLO Message">
 
 	<h4 class="u-text u-text-default u-text-1">Topology Control (TC)</h4>
       	  <p class="u-text u-text-default u-text-2">
 		A mensagem Topology Control (TC) no OLSR é usada para disseminar informações sobre a topologia da rede. Ela contém uma lista dos MPRs de um nó, que são responsáveis por retransmitir as 
 		  mensagens de controle, garantindo que todos os nós na rede recebam informações atualizadas sobre os enlaces. As mensagens TC são fundamentais para a construção e manutenção das tabelas de roteamento, 
 		  permitindo que os nós conheçam a estrutura da rede para calcular as melhores rotas.
-	    <img src="images/TC_Package.png" width="404" alt="Figura 3.2: Estrutura do TC Message" title="Figura 3.2: Estrutura do TC Message">
       	  </p>
+	    <img src="images/TC_Package.png" width="404" alt="Figura 3.2: Estrutura do TC Message" title="Figura 3.2: Estrutura do TC Message">
 
 	<h4 class="u-text u-text-default u-text-1">Multiple Interface Declaration (MID) </h4>
       	  <p class="u-text u-text-default u-text-2">
 		A mensagem Multiple Interface Declaration (MID) no OLSR é usada para informar a presença de múltiplas interfaces de rede em um nó. Isso é necessário em redes onde um nó possui mais de uma interface, 
 		  e o protocolo precisa saber quais endereços pertencem ao mesmo nó para mapear corretamente as interfaces aos endereços principais. A MID ajuda a garantir que as rotas sejam corretamente 
 		  associadas ao nó, mesmo quando ele tem várias interfaces de rede.
-	    <img src="images/MID_Package.png" width="404" alt="Figura 3.2: Estrutura do MID Message" title="Figura 3.2: Estrutura do MID Message">
       	  </p>
+	    <img src="images/MID_Package.png" width="404" alt="Figura 3.2: Estrutura do MID Message" title="Figura 3.2: Estrutura do MID Message">
 
 	<h4 class="u-text u-text-default u-text-1">Host and Network Association (HNA)</h4>
       	  <p class="u-text u-text-default u-text-2">
 		A mensagem Host and Network Association (HNA) no OLSR é usada para anunciar redes e hosts externos à rede OLSR. Ela permite que nós informem outros nós sobre redes externas que não 
 		  estão diretamente conectadas a eles. Essas mensagens contêm pares de endereços de rede e suas máscaras de sub-rede, possibilitando que os nós na rede OLSR saibam como rotear pacotes para 
 		  redes fora da rede OLSR, facilitando a integração com outras redes.
-	    <img src="images/HNA_Package.png" width="404" alt="Figura 3.2: Estrutura do HNA Message" title="Figura 3.2: Estrutura do HNA Message">
       	  </p>
+	    <img src="images/HNA_Package.png" width="404" alt="Figura 3.2: Estrutura do HNA Message" title="Figura 3.2: Estrutura do HNA Message">
     </div>
   </section>
   <section class="u-clearfix u-section-5" id="sec-83a8">
