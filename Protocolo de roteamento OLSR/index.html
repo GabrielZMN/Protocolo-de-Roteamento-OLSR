@@ -161,7 +161,32 @@
   <section class="u-clearfix u-section-4" id="sec-de83">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h3 class="u-text u-text-default u-text-1">Protocolo OLSR</h3>
-      <p class="u-text u-text-default u-text-2">Texto.</p>
+        <h4 class="u-text u-text-default u-text-1">Principios de Funcionamento</h4>
+      	  <p class="u-text u-text-default u-text-2">
+          	O OLSR funciona através de um protocolo de roteamento proativo, que mantém atualizadas tabelas de roteamento com as melhores rotas. Ele usa um sistema de Multipoint Relays (MPRs), 
+		  que são nós escolhidos para retransmitir mensagens de controle. Esses MPRs ajudam a reduzir o tráfego de controle, já que só eles retransmitem pacotes, em vez de todos os nós. 
+		  Essa abordagem é útil em redes móveis porque diminui a sobrecarga e melhora a eficiência de roteamento em redes ad hoc dinâmicas.
+      	  </p>
+	<h4 class="u-text u-text-default u-text-1">Formato dos pacotes</h4>
+      	  <p class="u-text u-text-default u-text-2">
+          	O formato dos pacotes usados pelo OLSR segue um formato unificado para todas as mensagens do protocolo. Isso facilita a extensão do protocolo e permite adicionar 
+		  diferentes tipos de informações em uma única transmissão sem perder a retro-compatibilidade. Os pacotes são encapsulados em datagramas UDP para transmissão, 
+		  inclusive a porta 698 foi atribuída pela IANA para o uso exclusivo do protocolo OLSR. O protocolo também utiliza a técnica de flooding para disseminar mensagens pela rede, 
+		  com otimização usando MPRs para minimizar duplicações. O cabeçalho das mensagens contém informações sobre a distância em saltos até o emissor da mensagem.
+      	  </p>
+	<h4 class="u-text u-text-default u-text-1">Detecção de Conexões</h4>
+      	  <p class="u-text u-text-default u-text-2">
+          	A detecção de conexão no OLSR ocorre por meio da emissão periódica de mensagens HELLO. Cada interface envia essas mensagens para verificar a conectividade com interfaces de nós vizinhos. 
+		  Essa troca permite que cada nó construa um conjunto de ligações locais, documentando a conectividade entre interfaces locais e remotas. Se a camada de enlace fornecer informações suficientes, 
+		  esse processo pode ser usado em vez das mensagens HELLO, simplificando a detecção de conexão(Link Sensing).
+      	  </p>
+	<h4 class="u-text u-text-default u-text-1">Detecção de Vizinhos</h4>
+      	  <p class="u-text u-text-default u-text-2">
+          	Já a detecção de vizinhos no OLSR é feita de forma diferente dependendo do tipo de nó:<br><br>
+		- <strong>Nó de interface única:</strong> O endereço principal do nó é simplesmente o único endereço da interface, o que permite deduzir os vizinhos diretamente a 
+		  partir da troca de mensagens de <strong>Link Sensing(detecção de conexão)</strong>.<br><br>
+		- <strong>Informações adicionais são necessárias para mapear endereços de interfaces para endereços principais dos nós. Isso é obtido por meio de mensagens <strong>MID (Multiple Interface Declaration)</strong>.<br><br>
+      	  </p>
     </div>
   </section>
   <section class="u-clearfix u-section-5" id="sec-83a8">
